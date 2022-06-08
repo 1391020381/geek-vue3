@@ -18,13 +18,12 @@
 </template>
 
 <script setup>
-  import { ref,computed} from 'vue';
+  import { ref,computed, watchEffect} from 'vue';
   import useTodos from './useTodos'
-  let count = ref(1);
   function add(){
       count.value ++
   }
-let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
+let { title,todos, addTodo, clear, active, all, allDone } = useTodos();
 </script>
 
 

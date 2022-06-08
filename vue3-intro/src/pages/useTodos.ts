@@ -1,8 +1,11 @@
 
 import { ref, computed } from 'vue'
+import useStorage from './useStorage'
+
 export default function useTodos() {
     let title = ref("");
-    let todos = ref([{ title: "学习Vue", done: false }]);
+    // let todos = ref([{ title: "学习Vue", done: false }]);
+    let todos = useStorage('todos', [])
     function addTodo() {
         todos.value.push({
             title: title.value,
